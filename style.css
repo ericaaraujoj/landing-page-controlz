@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    
+}
+
+#logo{
+    width: 120px;
+}
+
+#logo-insta img{
+    width: 70px;
+    transition: transform 0.2s ease; /* suavidade */
+
+}
+
+#logo-insta img:hover{
+    transform: scale(1.03);
+}
+
+.menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+    gap: 120px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.menu a{
+    display: inline-block; /* permite usar transform (scale) no <a>, pois inline não aceita bem transform */
+    position: relative; /* necessário pro underline */
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s ease; /* suavidade */
+}
+
+.menu a:hover{
+    transform: scale(1.05);
+}
+
+/* linha invisível inicialmente */
+.menu a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px; /* distância da linha pro texto */
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+/* animação da linha */
+.menu a:hover::after {
+    width: 100%;
+}
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(244, 243, 243, 0.6);
+}
+
+.titulo1, .titulo2 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    font-weight: 750;
+    font-size: 60px;
+    padding-left: 70px;
+}
+
+.titulo1 {
+    animation: digitar 2s steps(30) forwards;
+}
+
+.titulo2 {
+    animation: digitar 2s steps(15) forwards;
+    animation-delay: 2s; 
+}
+
+@keyframes digitar {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.subtitulo{
+    font-weight: 300;
+    font-size: 20px;
+    padding-left: 70px;
+}
+
+.cta{
+   text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 200px;
+    height: 50px;
+    margin-left: 70px;
+
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    color: white;
+
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #2a2a2a);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    transition: transform 0.2s ease;
+}
+
+.cta:hover{
+        transform: scale(1.05);
+
+}
+
+
+
+
+/*Apenas para deixar o footer fixo no final da página, 
+como tinha pouco conteúdo estava mais para cima */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    background-color: rgba(244, 243, 243, 0.6);
+
+    
+}
