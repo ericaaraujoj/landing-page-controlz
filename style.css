@@ -5,6 +5,15 @@
     
 }
 
+/*Deixar a rolagem entre navegação mais suave*/
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
 #logo{
     width: 120px;
 }
@@ -19,6 +28,25 @@
     transform: scale(1.03);
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    background-color: #f1f1f3;
+}
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color:white;
+}
+
 .menu {
     position: absolute;
     left: 50%;
@@ -29,7 +57,7 @@
     display: flex;
     list-style: none;
     gap: 120px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
@@ -61,23 +89,6 @@
 /* animação da linha */
 .menu a:hover::after {
     width: 100%;
-}
-
-header{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: white;
-
-}
-
-footer{
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    background-color: rgba(244, 243, 243, 0.6);
 }
 
 .titulo1, .titulo2 {
@@ -140,20 +151,457 @@ footer{
 
 }
 
-
-
-
-/*Apenas para deixar o footer fixo no final da página, 
-como tinha pouco conteúdo estava mais para cima */
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+.servicos{
+        text-align: center;
 }
 
-main {
-    flex: 1;
-    background-color: rgba(244, 243, 243, 0.6);
+.servicos h2{
+    margin-top: 60px;
+    margin-bottom: 70px;
+    font-weight: 700px;
+    font-size: 30px;
 
-    
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(2, 360px);
+    gap:30px;
+    justify-content: center;
+}
+
+.card{
+    position: relative;
+    border-radius: 20px;
+    padding: 32px;
+    background-color: #fff;
+    border: 1px solid #f2f2f2;
+
+    transition: 
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    overflow: hidden;  
+}
+
+/* luz suave*/
+.card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(0,0,0,0.04), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card h3{
+    transition: transform 0.3s ease;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 15px;
+  color: #6e6e73;
+  line-height: 1.6;
+}
+
+.card:hover{
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover h3{
+    transform: translateY(-2px);
+}
+
+.card:hover::before{
+    opacity: 1;
+}
+
+.sobre{
+    /*espaçamento: top → right → bottom → left*/
+    padding: 90px 70px 10px 70px;
+}
+
+.sobre h2::after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: black;
+    margin-top: 10px;
+}
+
+.sobre p{
+    max-width: 700px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+.sobre h2{
+    margin-top: 60px;
+    margin-bottom: 70px;
+    font-weight: 700px;
+    font-size: 30px;
+}
+
+.contato{
+    padding: 80px 70px;
+}
+
+.contato h2{
+    margin-bottom: 70px;
+    font-weight: 700px;
+    font-size: 30px;
+
+}
+
+.contato h2::after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: black;
+    margin-top: 10px;
+}
+
+.contato p{
+    max-width: 800px;
+    line-height: 1.6;
+    font-size: 20px;
+    font-weight: 400px;
+    color: #333;
+}
+
+.formulario-contato {
+  max-width: 360px;
+  /*espaçamento: top → right → bottom → left*/
+  margin: 0 0 50px 0;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+.formulario-contato form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formulario-contato input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  font-size: 13px;
+  color: #111;
+  transition: border-color 0.2s ease;
+}
+
+/*aplica estilo quando o elemento está selecionado*/
+.formulario-contato input:focus {
+  outline: none;
+  border-color: #9ca3af;
+}
+
+.formulario-contato textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  font-size: 13px;
+  color: #111;
+  min-height: 80px; /*altura inicial*/
+  resize: vertical; /*permite expandir só pra baixo*/
+
+  transition: border-color 0.2s ease;
+}
+
+/*aplica estilo quando o elemento está selecionado*/
+.formulario-contato textarea:focus {
+  outline: none;
+  border-color: #9ca3af;
+}
+
+.formulario-contato button {
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+
+  background: #111;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.formulario-contato button:hover {
+  opacity: 0.9;
+}
+
+.contato-container {
+  display: flex;
+  flex-direction: column; 
+  gap: 60px;
+}
+
+.tabela-horarios {
+  margin: 0 auto;
+  text-align: left;
+
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 260px;
+  background: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #050505;
+  margin-top: 16px;
+  margin-left: 18px /*move apenas a tabela para a direita, para ficar no meio do titulo*/
+}
+
+/*cabeçalho*/
+th {
+  text-align: left;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: black; 
+  background: #f8f7f7; 
+}
+
+/*linhas*/
+td {
+  padding: 10px;
+  font-size: 13px;
+ font-weight: 500;
+  background: #060606; 
+  color: #e5e5e5; 
+}
+
+/*linha separadora*/
+tr:not(:last-child) td {
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.whatsapp-fixo {
+  position: fixed;
+  bottom: 20px;  /* distância do fundo */
+  right: 20px;   /* distância da direita */
+  z-index: 999;  /* fica por cima de tudo */
+}
+
+.whatsapp-fixo img {
+  width: 110px;
+  height: 110px;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-fixo img:hover {
+  transform: scale(1.1);
+}
+
+
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color:#e9e9eb;
+}
+
+/* garante que no desktop NÃO aparece */
+#menu-toggle,
+.menu-icon {
+    display: none;
+}
+
+/* ========================= */
+/* RESPONSIVIDADE (MOBILE)   */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    /* ================= HEADER ================= */
+
+    header {
+        padding: 15px 20px; /* aumenta a altura*/
+        min-height: 70px;
+    }
+
+    /* hambúrguer esquerda */
+    .menu-icon {
+        display: block;
+        position: absolute;
+        left: 20px;
+        font-size: 26px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    /* esconder checkbox */
+    #menu-toggle {
+        display: none;
+    }
+
+    /* menu dropdown */
+    .menu {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        background: white;
+        display: none;
+
+        transform: none !important; /* remove bug branco */
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: block;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+        align-items: center;
+    }
+
+    /* logo centralizada e menor */
+    #logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px; /* diminui logo */
+    }
+
+    /* insta direita */
+    #logo-insta {
+        position: absolute;
+        right: 20px;
+    }
+
+    #logo-insta img {
+        width: 40px;
+    }
+
+
+    /* ================= HERO ================= */
+
+    .titulo1, .titulo2 {
+        animation: none;
+        width: auto;
+
+        white-space: normal;      /* permite quebrar */
+        word-break: break-word;   /* quebra quando estoura */
+
+        font-size: 26px;
+        padding-left: 20px;
+        padding-right: 20px; /* evita corte lateral */
+    }
+
+    .subtitulo {
+        font-size: 15px;
+        padding: 0 20px;
+        word-break: break-word;
+    }
+
+    .cta {
+        margin-left: 20px;
+        width: 180px;
+        height: 45px;
+    }
+
+
+    /* ================= SERVIÇOS ================= */
+
+    .cards {
+        grid-template-columns: 1fr;
+        padding: 0 16px; /* cria respiro lateral */
+    }
+
+    .card {
+        width: 100%;
+        box-sizing: border-box; /* ESSENCIAL */
+    }
+
+    .card p, .card h3 {
+    word-break: break-word;
+    }
+
+    /* ================= SOBRE ================= */
+
+    .sobre {
+        padding: 60px 20px;
+    }
+
+    .sobre h2 {
+        font-size: 24px;
+    }
+
+    .sobre p {
+        max-width: 100%;
+        font-size: 15px;
+        word-break: break-word;
+    }
+
+
+    /* ================= CONTATO ================= */
+
+    .contato {
+        padding: 60px 20px;
+    }
+
+    .contato h2 {
+        font-size: 24px;
+    }
+
+    .contato p {
+        font-size: 16px;
+    }
+
+    .formulario-contato {
+        max-width: 100%;
+    }
+
+
+    /* ================= TABELA ================= */
+
+    table {
+        width: 100%;
+        min-width: unset;
+        transform: none;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+
+    /* ================= WHATS ================= */
+
+    .whatsapp-fixo img {
+        width: 65px;
+        height: 65px;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer {
+        font-size: 14px;
+        padding: 15px 10px;
+    }
 }

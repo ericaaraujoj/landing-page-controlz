@@ -13,12 +13,18 @@
     <header>
         <img id="logo" src="/img/logo-fundo-branco.PNG" alt="logo control z">
         
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="menu-icon">
+            ☰
+        </label>
+
         <nav class="menu"> 
             <ul>
-                <li><a  href="#">HOME</a></li>
-                <li><a href="#">SERVIÇOS</a></li>
-                <li><a href="#">SOBRE</a></li>
-                <li><a href="#">CONTATO</a></li>
+                <li><a  href="#hero">HOME</a></li>
+                <li><a href="#servicos">SERVIÇOS</a></li>
+                <li><a href="#sobre">SOBRE</a></li>
+                <li><a href="#contato">CONTATO</a></li>
             </ul>
         </nav>
 
@@ -29,7 +35,7 @@
     
 
     <main>
-        <section class="hero">
+        <section id="hero" class="hero">
         <br><br><br>
         <p>
             <span class="titulo1">TRANSFORMAMOS IDEIAS EM</span><br>
@@ -43,89 +49,92 @@
         <a  href="https://wa.me/5575983552394" class="cta" target="_blank" rel="noopener noreferrer">FALE CONOSCO</a>
         </section>
 
-        <section class="servicos">
+        <section id="servicos" class="servicos">
             <br><br><br>
             <h2>O QUE FAZEMOS</h2>
-            <br>
-            <div class="card">
-                <h3>Marketing & Estratégia</h3>
-                <p>Gestão de redes sociais, planejamento e conteúdo estratégico.</p>
-            </div>
+            <div class="cards">
+                <div class="card">
+                    <h3>Marketing & Estratégia</h3>
+                    <p>Gestão de redes sociais, planejamento e conteúdo estratégico.</p>
+                </div>
 
-            <div class="card">
-                <h3>Produção de Conteúdo</h3>
-                <p>Foto, vídeo, edição e cobertura de eventos.</p>
-            </div>
+                <div class="card">
+                    <h3>Produção de Conteúdo</h3>
+                    <p>Foto, vídeo, edição e cobertura de eventos.</p>
+                </div>
 
-            <div class="card">
-                <h3>Branding & Gestão</h3>
-                <p>Posicionamento, imagem e relacionamento com clientes.</p>
-            </div>       
+                <div class="card">
+                    <h3>Branding & Gestão</h3>
+                    <p>Posicionamento, imagem e relacionamento com clientes.</p>
+                </div>       
 
-            <div class="card">
-                <h3>Estúdio Audiovisual</h3>
-                <p>Espaço profissional para gravações e conteúdos.</p>
+                <div class="card">
+                    <h3>Estúdio Audiovisual</h3>
+                    <p>Espaço profissional para gravações e conteúdos.</p>
+                </div>
             </div>              
-
         </section>
 
-        <section class="sobre">
-            <br><br><br>
-            <h2>SOBRE</h2><br>
-            <p>A Control Z surgiu com a proposta de transformar ideias em resultados reais, unindo criatividade, 
-            estratégia e execução. Desde o início, o foco sempre foi ajudar marcas e profissionais a se 
-            posicionarem melhor no digital, com uma comunicação que faça sentido e gere impacto de verdade.</p><br>
-            <p>Nossa missão é construir presenças digitais fortes e autênticas, através de planejamento, 
-            produção de conteúdo e gestão de imagem. Trabalhamos de forma próxima e personalizada, entendendo cada projeto 
-            como único. Buscamos unir estratégia e criatividade na prática, oferecendo soluções completas que vão 
-            desde o planejamento até a produção audiovisual, sempre com atenção aos detalhes e foco em resultado.</p>
+        <section id="sobre" class="sobre">
+            <h2>SOBRE</h2>
+
+            <p>A Control Z surgiu com o objetivo de transformar ideias em resultados reais, unindo criatividade e 
+                estratégia de forma prática. Desde o início, buscamos ajudar marcas e profissionais a se posicionarem
+                melhor no digital, com uma comunicação clara, autêntica e que realmente gere impacto.</p>
+
+            <p>Nossa missão é construir presenças digitais fortes e consistentes, através de planejamento, produção
+                de conteúdo e gestão de imagem. Como diferencial, trabalhamos de forma próxima e personalizada, 
+                entendendo cada projeto como único e entregando soluções completas, do planejamento à execução, 
+                sempre com foco em resultado.</p>
+        </section>
+        
+        <section id="contato" class="contato">
+            <h2>CONTATO</h2>
+
+            <div class="contato-container">
+
+                <section class="formulario-contato">
+                    <form action="#">
+                        <h3 class="titulo-form">Ficou com alguma dúvida?</h3>
+
+                        <input type="text" placeholder="Seu nome" required>
+                        <input type="tel" placeholder="Seu telefone com DDD" required>
+                        <textarea placeholder="Mensagem (opcional)"></textarea>
+
+                        <button type="submit">ENVIAR</button>
+                    </form>
+                </section>
+
+                <section class="tabela-horarios">
+                    <h3 class="titulo-form">HORÁRIOS DE FUNCIONAMENTO</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dia</th>
+                                <th>Horário</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Segunda a Sexta</td>
+                                <td>08:00 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>Sábado</td>
+                                <td>09:00 - 12:00</td>
+                            </tr>
+                            <tr>
+                                <td>Domingo</td>
+                                <td>Fechado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+            </div>
         </section>
 
-        <section class="contato">
-            <section class="formulario-contato">
-            <br><br><br>
-            <h2>CONTATO</h2><br>      
-            <p>Ficou com alguma dúvida?</p><br>
-            <form action="#">
-                <label for="nome"></label>
-                <input type="text" id="nome" placeholder="Seu nome" required><br>
-                <label for="telefone"></label>
-                <input type="tel" id="telefone" placeholder="Seu telefone com DDD" required>
-                <label for="mensagem"></label><br>
-                <input type="text" id="mensagem" placeholder="Mensagem (opcional)"><br><br>
-                <button type="submit">ENVIAR</button>
-            </form><br><br>
-            </section>
-
-            <section class="tabela-horarios">
-                <p>Horários de funcionamento:</p>
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Dia</th>
-                            <th>Horário</th>
-                        </tr>
-                    </thead>
-                    
-                    <tbody>
-                        <tr>
-                            <td>Segunda a Sexta</td>
-                            <td>08:00 - 18:00</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Sábado</td>
-                            <td>09:00 - 12:00</td>
-                        </tr>
-
-                        <tr>
-                            <td>Domingo</td>
-                            <td>Fechado</td>
-                        </tr>
-                    </tbody>
-            </section>
-        </section>
-    </main>
 
     <footer>
         <p>
@@ -135,5 +144,9 @@
             </a>
         </p>
     </footer>
+
+    <a href="https://wa.me/5575983552394" target="_blank" rel="noopener" class="whatsapp-fixo">
+    <img src="img/logo-whatsapp-fundo.png" alt="WhatsApp">
+    </a>
 </body>
 </html>
