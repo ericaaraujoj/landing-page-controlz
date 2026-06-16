@@ -5,7 +5,7 @@ emailjs.init("SUA_PUBLIC_KEY");
 const formulario = document.getElementById("form-contato");
 
 
-formulario.addEventListener("submit", function(event){
+formulario.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
@@ -15,21 +15,19 @@ formulario.addEventListener("submit", function(event){
         "SEU_TEMPLATE_ID",
         this
     )
-    .then(() => {
+        .then(() => {
 
-        alert("Mensagem enviada com sucesso!");
+            alert("Mensagem enviada com sucesso!");
 
-        formulario.reset();
+            formulario.reset();
 
-    })
-    .catch((erro)=>{
+        })
+        .catch((erro) => {
 
-        alert("Erro ao enviar mensagem");
+            alert("Erro ao enviar mensagem");
 
-        console.log(erro);
-
-    });
-
+            console.log(erro);
+        });
 });
 
 //slider
@@ -41,22 +39,47 @@ const prev = document.querySelector(".btn-prev");
 
 const videos = document.querySelectorAll(".portfolio-video");
 
-
 let sliderAtivo = true;
 
 
-// botão próximo
-next.addEventListener("click", ()=>{
+// pega o tamanho real do slide
+function tamanhoSlide() {
+    return document.querySelector(".carousel-track").clientWidth;
+}
 
-    track.scrollLeft += 330;
+
+// botão próximo
+next.addEventListener("click", () => {
+
+    if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 5) {
+
+        track.scrollLeft = 0;
+
+    } else {
+
+        track.scrollLeft += tamanhoSlide();
+
+    }
+
+    iniciarAutoSlide();
 
 });
 
 
 // botão anterior
-prev.addEventListener("click", ()=>{
+prev.addEventListener("click", () => {
 
-    track.scrollLeft -= 330;
+    if (track.scrollLeft <= 0) {
+
+        track.scrollLeft = track.scrollWidth - track.clientWidth;
+
+    } else {
+
+        track.scrollLeft -= tamanhoSlide();
+
+    }
+
+    iniciarAutoSlide();
 
 });
 
@@ -65,96 +88,67 @@ prev.addEventListener("click", ()=>{
 // quando clicar em vídeo
 videos.forEach(video => {
 
+    video.addEventListener("play", () => {
 
-    video.addEventListener("play", ()=>{
-
-
-        // para o slider automático
         sliderAtivo = false;
 
 
-
-        // pausa todos os outros vídeos
         videos.forEach(outroVideo => {
 
-
-            if(outroVideo !== video){
+            if (outroVideo !== video) {
 
                 outroVideo.pause();
 
             }
 
-
         });
-
 
     });
 
 
 
-    // quando terminar o vídeo
-    video.addEventListener("ended", ()=>{
-
+    video.addEventListener("ended", () => {
 
         sliderAtivo = true;
 
-
     });
-
 
 });
 
 
-// passa sozinho a cada 8 segundos
+
+// passa sozinho
 
 let tempoSlider;
 
 
-function iniciarAutoSlide(){
+function iniciarAutoSlide() {
 
     clearInterval(tempoSlider);
 
 
-    tempoSlider = setInterval(()=>{
+    tempoSlider = setInterval(() => {
 
 
-        if(sliderAtivo){
+        if (sliderAtivo) {
 
 
-            track.scrollLeft += 330;
+            track.scrollLeft += tamanhoSlide();
 
 
-            if(track.scrollLeft >= track.scrollWidth - track.clientWidth){
+
+            if (track.scrollLeft >= track.scrollWidth - track.clientWidth) {
 
                 track.scrollLeft = 0;
 
             }
 
-
         }
 
 
-    },8000);
+    }, 8000);
 
 }
 
+
 iniciarAutoSlide();
-
-// quando clicar nas setas reinicia o tempo
-
-next.addEventListener("click", ()=>{
-
-    track.scrollLeft += 330;
-
-    iniciarAutoSlide();
-
-});
-
-
-prev.addEventListener("click", ()=>{
-
-    track.scrollLeft -= 330;
-
-    iniciarAutoSlide();
-
-});

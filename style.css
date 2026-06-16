@@ -506,7 +506,7 @@ footer {
 .carousel-track {
     scroll-behavior: auto;
     display: flex;
-    gap: 20px;
+    gap: 22px;
 
     overflow: hidden;
     width: 100%;
@@ -734,7 +734,7 @@ footer {
 
 
     .portfolio {
-        padding: 50px 20px 30px;
+        padding: 50px 10px 30px;
     }
 
 
@@ -750,7 +750,7 @@ footer {
 
 
     .carousel-track {
-        gap: 15px;
+        gap: 0;
     }
 
     .btn-prev,
@@ -772,15 +772,19 @@ footer {
     }
 
     .slide {
-        height: 600px;
-        min-width: 300px;
+    min-width: 100%;
+    height: 450px;
+    flex-shrink: 0;
     }
 
     .slide img,
     .slide video {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-        object-position: center;
-    }
+        border-radius: 20px;
+}
+
 
 
     /* ================= FOOTER ================= */
