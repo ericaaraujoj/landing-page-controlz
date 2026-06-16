@@ -1,30 +1,31 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    
+
 }
 
 /*Deixar a rolagem entre navegação mais suave*/
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 html, body {
     overflow-x: hidden;
 }
 
-#logo{
+#logo {
     width: 120px;
 }
 
-#logo-insta img{
+#logo-insta img {
     width: 70px;
-    transition: transform 0.2s ease; /* suavidade */
+    transition: transform 0.2s ease;
+    /* suavidade */
 
 }
 
-#logo-insta img:hover{
+#logo-insta img:hover {
     transform: scale(1.03);
 }
 
@@ -38,22 +39,25 @@ main {
     background-color: #f1f1f3;
 }
 
-header{
+header {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color:white;
+    background-color: white;
 }
 
 .menu {
     position: absolute;
+    /*tira o elemento do fluxo normal da página
+   ele passa a ser posicionado em relação ao "pai mais próximo que tenha position: relative"
+   se não tiver nenhum → usa o body*/
     left: 50%;
     transform: translateX(-50%);
 }
 
-.menu ul{
+.menu ul {
     display: flex;
     list-style: none;
     gap: 120px;
@@ -62,24 +66,28 @@ header{
     letter-spacing: 0.5px;
 }
 
-.menu a{
-    display: inline-block; /* permite usar transform (scale) no <a>, pois inline não aceita bem transform */
-    position: relative; /* necessário pro underline */
+.menu a {
+    display: inline-block;
+    /* permite usar transform (scale) no <a>, pois inline não aceita bem transform */
+    position: relative;
+    /* necessário pro underline */
     text-decoration: none;
     color: black;
-    transition: transform 0.2s ease; /* suavidade */
+    transition: transform 0.2s ease;
+    /* suavidade */
 }
 
-.menu a:hover{
+.menu a:hover {
     transform: scale(1.05);
 }
 
 /* linha invisível inicialmente */
-.menu a::after{
+.menu a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -4px; /* distância da linha pro texto */
+    bottom: -4px;
+    /* distância da linha pro texto */
     width: 0;
     height: 2px;
     background-color: black;
@@ -107,26 +115,27 @@ header{
 
 .titulo2 {
     animation: digitar 2s steps(15) forwards;
-    animation-delay: 2s; 
+    animation-delay: 2s;
 }
 
 @keyframes digitar {
     from {
         width: 0;
     }
+
     to {
         width: 100%;
     }
 }
 
-.subtitulo{
+.subtitulo {
     font-weight: 300;
     font-size: 20px;
     padding-left: 70px;
 }
 
-.cta{
-   text-decoration: none;
+.cta {
+    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,60 +150,79 @@ header{
     color: white;
 
     background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #2a2a2a);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
     transition: transform 0.2s ease;
 }
 
-.cta:hover{
-        transform: scale(1.05);
+.cta:hover {
+    transform: scale(1.05);
 
 }
 
-.servicos{
-        text-align: center;
+.servicos {
+    text-align: center;
 }
 
-.servicos h2{
-    margin-top: 60px;
-    margin-bottom: 70px;
-    font-weight: 700px;
+.servicos h2 {
+
+    margin-top: 90px;
+
+    margin-bottom: 60px;
+
+    font-weight: 700;
+
     font-size: 30px;
 
 }
 
-.cards{
+.servicos h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 60px;
+
+    height: 3px;
+
+    background: black;
+
+    margin: 10px auto 0;
+
+}
+
+.cards {
     display: grid;
     grid-template-columns: repeat(2, 360px);
-    gap:30px;
+    gap: 30px;
     justify-content: center;
 }
 
-.card{
+.card {
     position: relative;
     border-radius: 20px;
     padding: 32px;
     background-color: #fff;
     border: 1px solid #f2f2f2;
 
-    transition: 
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 
-    overflow: hidden;  
+    overflow: hidden;
 }
 
-/* luz suave*/
-.card::before{
+.card::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top right, rgba(0,0,0,0.04), transparent 60%);
+    background: radial-gradient(circle at top right, rgba(0, 0, 0, 0.04), transparent 60%);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-.card h3{
+.card h3 {
     transition: transform 0.3s ease;
     font-size: 20px;
     font-weight: 600;
@@ -203,30 +231,30 @@ header{
 }
 
 .card p {
-  font-size: 15px;
-  color: #6e6e73;
-  line-height: 1.6;
+    font-size: 15px;
+    color: #6e6e73;
+    line-height: 1.6;
 }
 
-.card:hover{
+.card:hover {
     transform: translateY(-6px) scale(1.01);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-.card:hover h3{
+.card:hover h3 {
     transform: translateY(-2px);
 }
 
-.card:hover::before{
+.card:hover::before {
     opacity: 1;
 }
 
-.sobre{
+.sobre {
     /*espaçamento: top → right → bottom → left*/
-    padding: 90px 70px 10px 70px;
+    padding: 40px 70px 10px 70px;
 }
 
-.sobre h2::after{
+.sobre h2::after {
     content: "";
     display: block;
     width: 60px;
@@ -235,7 +263,7 @@ header{
     margin-top: 10px;
 }
 
-.sobre p{
+.sobre p {
     max-width: 700px;
     margin-bottom: 20px;
     line-height: 1.6;
@@ -243,25 +271,25 @@ header{
 }
 
 
-.sobre h2{
+.sobre h2 {
     margin-top: 60px;
     margin-bottom: 70px;
     font-weight: 700px;
     font-size: 30px;
 }
 
-.contato{
+.contato {
     padding: 80px 70px;
 }
 
-.contato h2{
+.contato h2 {
     margin-bottom: 70px;
     font-weight: 700px;
     font-size: 30px;
 
 }
 
-.contato h2::after{
+.contato h2::after {
     content: "";
     display: block;
     width: 60px;
@@ -270,7 +298,7 @@ header{
     margin-top: 10px;
 }
 
-.contato p{
+.contato p {
     max-width: 800px;
     line-height: 1.6;
     font-size: 20px;
@@ -279,146 +307,162 @@ header{
 }
 
 .formulario-contato {
-  max-width: 360px;
-  /*espaçamento: top → right → bottom → left*/
-  margin: 0 0 50px 0;
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 14px;
-  border: 1px solid #e5e7eb;
+    max-width: 360px;
+    /*espaçamento: top → right → bottom → left*/
+    margin: 0 0 50px 0;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
 }
 
 .formulario-contato form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .formulario-contato input {
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-  font-size: 13px;
-  color: #111;
-  transition: border-color 0.2s ease;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    font-size: 13px;
+    color: #111;
+    transition: border-color 0.2s ease;
 }
 
 /*aplica estilo quando o elemento está selecionado*/
 .formulario-contato input:focus {
-  outline: none;
-  border-color: #9ca3af;
+    outline: none;
+    border-color: #9ca3af;
 }
 
 .formulario-contato textarea {
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-  font-size: 13px;
-  color: #111;
-  min-height: 80px; /*altura inicial*/
-  resize: vertical; /*permite expandir só pra baixo*/
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    font-size: 13px;
+    color: #111;
+    min-height: 80px;
+    /*altura inicial*/
+    resize: vertical;
+    /*permite expandir só pra baixo*/
 
-  transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease;
 }
 
 /*aplica estilo quando o elemento está selecionado*/
 .formulario-contato textarea:focus {
-  outline: none;
-  border-color: #9ca3af;
+    outline: none;
+    border-color: #9ca3af;
 }
 
 .formulario-contato button {
-  margin-top: 6px;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
+    margin-top: 6px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
 
-  font-size: 13px;
-  font-weight: 600;
-  color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
 
-  background: #111;
+    background: #111;
 
-  cursor: pointer;
-  transition: 0.2s ease;
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 
 .formulario-contato button:hover {
-  opacity: 0.9;
+    opacity: 0.9;
+}
+
+.titulo-form {
+
+    font-size: 20px;
+
+    margin-bottom: 20px;
+
+    color: #111;
+
 }
 
 .contato-container {
-  display: flex;
-  flex-direction: column; 
-  gap: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
 .tabela-horarios {
-  margin: 0 auto;
-  text-align: left;
+    margin: 0 auto;
+    text-align: left;
 
 }
 
 table {
-  border-collapse: collapse;
-  min-width: 260px;
-  background: #111;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid #050505;
-  margin-top: 16px;
-  margin-left: 18px /*move apenas a tabela para a direita, para ficar no meio do titulo*/
+    border-collapse: collapse;
+    min-width: 260px;
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #050505;
+    margin-top: 16px;
+    margin-left: 18px
+        /*move apenas a tabela para a direita, para ficar no meio do titulo*/
 }
 
 /*cabeçalho*/
 th {
-  text-align: left;
-  padding: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  color: black; 
-  background: #f8f7f7; 
+    text-align: left;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: black;
+    background: #f8f7f7;
 }
 
 /*linhas*/
 td {
-  padding: 10px;
-  font-size: 13px;
- font-weight: 500;
-  background: #060606; 
-  color: #e5e5e5; 
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    background: #060606;
+    color: #e5e5e5;
 }
 
 /*linha separadora*/
 tr:not(:last-child) td {
-  border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
 }
 
 .whatsapp-fixo {
-  position: fixed;
-  bottom: 20px;  /* distância do fundo */
-  right: 20px;   /* distância da direita */
-  z-index: 999;  /* fica por cima de tudo */
+    position: fixed;
+    bottom: 20px;
+    /* distância do fundo */
+    right: 20px;
+    /* distância da direita */
+    z-index: 999;
+    /* fica por cima de tudo */
 }
 
 .whatsapp-fixo img {
-  width: 110px;
-  height: 110px;
-  transition: transform 0.2s ease;
+    width: 110px;
+    height: 110px;
+    transition: transform 0.2s ease;
 }
 
 .whatsapp-fixo img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 
-footer{
+footer {
     width: 100%;
     text-align: center;
     padding: 20px 0;
-    background-color:#e9e9eb;
+    background-color: #e9e9eb;
 }
 
 /* garante que no desktop NÃO aparece */
@@ -426,6 +470,83 @@ footer{
 .menu-icon {
     display: none;
 }
+
+/* ================= PORTFOLIO ================= */
+.portfolio {
+    padding: 70px 70px 40px;
+    text-align: center;
+}
+
+
+.portfolio h2 {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.portfolio h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: black;
+    margin: 10px auto 0;
+}
+
+.carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.carousel-track {
+    scroll-behavior: auto;
+    display: flex;
+    gap: 20px;
+
+    overflow: hidden;
+    width: 100%;
+}
+
+.slide {
+    min-width: 300px;
+    height: 400px;
+    flex-shrink: 0;
+}
+
+.slide img,
+.slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.btn-prev,
+.btn-next {
+    position: absolute;
+    z-index: 5;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #111;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-prev {
+    left: -20px;
+}
+
+.btn-next {
+    right: -20px;
+}
+
 
 /* ========================= */
 /* RESPONSIVIDADE (MOBILE)   */
@@ -436,7 +557,8 @@ footer{
     /* ================= HEADER ================= */
 
     header {
-        padding: 15px 20px; /* aumenta a altura*/
+        padding: 15px 20px;
+        /* aumenta a altura*/
         min-height: 70px;
     }
 
@@ -464,10 +586,11 @@ footer{
         background: white;
         display: none;
 
-        transform: none !important; /* remove bug branco */
+        transform: none !important;
+        /* remove bug branco */
     }
 
-    #menu-toggle:checked + .menu-icon + .menu {
+    #menu-toggle:checked+.menu-icon+.menu {
         display: block;
     }
 
@@ -483,7 +606,8 @@ footer{
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        width: 80px; /* diminui logo */
+        width: 80px;
+        /* diminui logo */
     }
 
     /* insta direita */
@@ -503,12 +627,15 @@ footer{
         animation: none;
         width: auto;
 
-        white-space: normal;      /* permite quebrar */
-        word-break: break-word;   /* quebra quando estoura */
+        white-space: normal;
+        /* permite quebrar */
+        word-break: break-word;
+        /* quebra quando estoura */
 
         font-size: 26px;
         padding-left: 20px;
-        padding-right: 20px; /* evita corte lateral */
+        padding-right: 20px;
+        /* evita corte lateral */
     }
 
     .subtitulo {
@@ -528,26 +655,32 @@ footer{
 
     .cards {
         grid-template-columns: 1fr;
-        padding: 0 16px; /* cria respiro lateral */
+        padding: 0 16px;
+        /* cria respiro lateral */
     }
 
     .card {
         width: 100%;
-        box-sizing: border-box; /* ESSENCIAL */
+        box-sizing: border-box;
+        /* ESSENCIAL */
     }
 
     .card p, .card h3 {
-    word-break: break-word;
+        word-break: break-word;
     }
 
     /* ================= SOBRE ================= */
 
     .sobre {
-        padding: 60px 20px;
+        padding: 40px 70px 10px 70px;
     }
 
+
     .sobre h2 {
-        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 50px;
+        font-weight: 700;
+        font-size: 30px;
     }
 
     .sobre p {

@@ -13,13 +13,15 @@ O projeto foi pensado para destacar informações importantes como serviços ofe
 
 <!-- Coloque aqui a imagem do projeto -->
 - Desktop
+  
 ![Preview do projeto](/img/foto1.png)
 ![Preview do projeto](/img/foto2.png)
 ![Preview do projeto](/img/foto3.png)
     
   
 ㅤ
-- Mobile  
+- Mobile
+  
 ![Preview do projeto](/img/foto4-celular.png)
 ![Preview do projeto](/img/foto4.2-celular.png)
 ![Preview do projeto](/img/foto5-celular.png)

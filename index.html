@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,50 +8,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <title>Control Z</title>
+    <link rel="icon" href="/img/logo-fundo-branco.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <img id="logo" src="/img/logo-fundo-branco.PNG" alt="logo control z">
-        
+
         <input type="checkbox" id="menu-toggle">
 
         <label for="menu-toggle" class="menu-icon">
             ☰
         </label>
 
-        <nav class="menu"> 
+        <nav class="menu">
             <ul>
-                <li><a  href="#hero">HOME</a></li>
+                <li><a href="#hero">HOME</a></li>
                 <li><a href="#servicos">SERVIÇOS</a></li>
+                <li><a href="#portfolio">PORTFÓLIO</a></li>
                 <li><a href="#sobre">SOBRE</a></li>
                 <li><a href="#contato">CONTATO</a></li>
             </ul>
         </nav>
 
         <a id="logo-insta" href="https://www.instagram.com/controlz.fsa/" target="_blank" rel="noopener noreferrer">
-        <img src="img/logo-instagram.png" alt="Instagram">
-        </a>        
+            <img src="img/logo-instagram.png" alt="Instagram">
+        </a>
     </header>
-    
 
     <main>
         <section id="hero" class="hero">
-        <br><br><br>
-        <p>
-            <span class="titulo1">TRANSFORMAMOS IDEIAS EM</span><br>
-            <span class="titulo2">RESULTADOS</span>
-        </p>    
-        <br>
-        <p class="subtitulo">Do planejamento à execução, focamos no que realmente importa: resultado.</p>
+            <br><br><br><br><br>
+            <p>
+                <span class="titulo1">TRANSFORMAMOS IDEIAS EM</span><br>
+                <span class="titulo2">RESULTADOS</span>
+            </p>
+            <br>
+            <p class="subtitulo">Do planejamento à execução, focamos no que realmente importa: resultado.</p>
 
-        <br><br>
-        
-        <a  href="https://wa.me/5575983552394" class="cta" target="_blank" rel="noopener noreferrer">FALE CONOSCO</a>
+            <br><br>
+
+            <a href="https://wa.me/5575983552394" class="cta" target="_blank" rel="noopener noreferrer">FALE CONOSCO</a>
         </section>
 
         <section id="servicos" class="servicos">
-            <br><br><br>
+            <br>
             <h2>O QUE FAZEMOS</h2>
             <div class="cards">
                 <div class="card">
@@ -66,43 +69,139 @@
                 <div class="card">
                     <h3>Branding & Gestão</h3>
                     <p>Posicionamento, imagem e relacionamento com clientes.</p>
-                </div>       
+                </div>
 
                 <div class="card">
                     <h3>Estúdio Audiovisual</h3>
                     <p>Espaço profissional para gravações e conteúdos.</p>
                 </div>
-            </div>              
+            </div>
+        </section>
+
+
+        <section id="portfolio" class="portfolio">
+
+            <h2>PORTFÓLIO</h2>
+
+            <div class="carousel">
+
+                <button class="btn-prev">❮</button>
+
+
+                <div class="carousel-track">
+
+
+                    <div class="slide">
+                        <img src="/img/portifolio/foto1.png" alt="Produção de conteúdo visual">
+                    </div>
+
+
+                    <div class="slide">
+                        <img src="/img/portifolio/foto2.png" alt="Produção de conteúdo visual">
+                    </div>
+
+
+                    <div class="slide">
+                        <img src="/img/portifolio/foto3.png" alt="Produção de conteúdo visual">
+                    </div>
+
+                    <div class="slide">
+                        <img src="/img/portifolio/foto4.png" alt="Produção de conteúdo visual">
+                    </div>
+
+                    <div class="slide">
+                        <img src="/img/portifolio/foto5.jpeg" alt="Produção de conteúdo visual">
+                    </div>
+
+                    <div class="slide">
+                        <img src="/img/portifolio/foto6.jpeg" alt="Produção de conteúdo visual">
+                    </div>
+
+                    <div class="slide">
+                        <img src="/img/portifolio/foto7.jpeg" alt="Produção de conteúdo visual">
+                    </div>
+
+                    <div class="slide">
+                        <img src="/img/portifolio/foto8.jpeg" alt="Produção de conteúdo visual">
+                    </div>
+
+                    <div class="slide">
+                        <img src="/img/portifolio/foto9.jpeg" alt="Produção de conteúdo visual">
+                    </div>
+
+                    <div class="slide">
+                        <img src="/img/portifolio/foto10.jpeg" alt="Produção de conteúdo visual">
+                    </div>
+
+                    <div class="slide">
+                        <img src="/img/portifolio/foto11.jpeg" alt="Produção de conteúdo visual">
+                    </div>
+
+                    <div class="slide">
+                        <img src="/img/portifolio/foto12.jpeg" alt="Produção de conteúdo visual">
+                    </div>
+
+                    <div class="slide">
+                        <video class="portfolio-video" controls>
+                            <source src="img/portifolio/Ruan 1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="slide">
+                        <video class="portfolio-video" controls>
+                            <source src="img/portifolio/Ruan 2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="slide">
+                        <video class="portfolio-video" controls>
+                            <source src="img/portifolio/Ruan 3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <button class="btn-next">❯</button>
+
+            </div>
+
         </section>
 
         <section id="sobre" class="sobre">
             <h2>SOBRE</h2>
 
-            <p>A Control Z surgiu com o objetivo de transformar ideias em resultados reais, unindo criatividade e 
+            <p>A Control Z surgiu com o objetivo de transformar ideias em resultados reais, unindo criatividade e
                 estratégia de forma prática. Desde o início, buscamos ajudar marcas e profissionais a se posicionarem
                 melhor no digital, com uma comunicação clara, autêntica e que realmente gere impacto.</p>
 
             <p>Nossa missão é construir presenças digitais fortes e consistentes, através de planejamento, produção
-                de conteúdo e gestão de imagem. Como diferencial, trabalhamos de forma próxima e personalizada, 
-                entendendo cada projeto como único e entregando soluções completas, do planejamento à execução, 
+                de conteúdo e gestão de imagem. Como diferencial, trabalhamos de forma próxima e personalizada,
+                entendendo cada projeto como único e entregando soluções completas, do planejamento à execução,
                 sempre com foco em resultado.</p>
         </section>
-        
+
         <section id="contato" class="contato">
             <h2>CONTATO</h2>
 
             <div class="contato-container">
 
                 <section class="formulario-contato">
-                    <form action="#">
-                        <h3 class="titulo-form">Ficou com alguma dúvida?</h3>
+                    <h3 class="titulo-form">Ficou com alguma dúvida?</h3>
 
-                        <input type="text" placeholder="Seu nome" required>
-                        <input type="tel" placeholder="Seu telefone com DDD" required>
-                        <textarea placeholder="Mensagem (opcional)"></textarea>
+                    <form id="form-contato">
 
-                        <button type="submit">ENVIAR</button>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+
+                        <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone com DDD" required>
+
+                        <textarea id="mensagem" name="mensagem" placeholder="Mensagem (opcional)">
+                        </textarea>
+
+                        <button type="submit">
+                            ENVIAR
+                        </button>
                     </form>
+
+
                 </section>
 
                 <section class="tabela-horarios">
@@ -136,17 +235,23 @@
         </section>
 
 
-    <footer>
-        <p>
-            © 2026 Control Z — 
-           <a href="https://wa.me/5575991976321?text=Oi%2C%20quero%20fazer%20um%20site" target="_blank" rel="noopener noreferrer">
-                Desenvolvido por Érica Araujo
-            </a>
-        </p>
-    </footer>
+        <footer>
+            <p>
+                © 2026 Control Z —
+                <a href="https://wa.me/5575991976321?text=Oi%2C%20quero%20fazer%20um%20site" target="_blank"
+                    rel="noopener noreferrer">
+                    Desenvolvido por Érica Araujo
+                </a>
+            </p>
+        </footer>
 
-    <a href="https://wa.me/5575983552394" target="_blank" rel="noopener" class="whatsapp-fixo">
-    <img src="img/logo-whatsapp-fundo.png" alt="WhatsApp">
-    </a>
+        <a href="https://wa.me/5575983552394" target="_blank" rel="noopener" class="whatsapp-fixo">
+            <img src="img/logo-whatsapp-fundo.png" alt="WhatsApp">
+        </a>
+
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="script.js"></script>
+
 </body>
+
 </html>
