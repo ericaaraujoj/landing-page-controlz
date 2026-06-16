@@ -60,7 +60,7 @@ header {
 .menu ul {
     display: flex;
     list-style: none;
-    gap: 100px;
+    gap: 90px;
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.5px;
