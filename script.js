@@ -44,7 +44,7 @@ let sliderAtivo = true;
 
 // pega o tamanho real do slide
 function tamanhoSlide() {
-    return document.querySelector(".carousel-track").clientWidth;
+    return document.querySelector(".slide").getBoundingClientRect().width;
 }
 
 
