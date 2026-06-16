@@ -730,6 +730,58 @@ footer {
         height: 65px;
     }
 
+    /* ================= PORTFOLIO ================= */
+
+
+    .portfolio {
+        padding: 50px 20px 30px;
+    }
+
+
+    .portfolio h2 {
+        font-size: 24px;
+        margin-bottom: 35px;
+    }
+
+
+    .carousel {
+        max-width: 100%;
+    }
+
+
+    .carousel-track {
+        gap: 15px;
+    }
+
+    .btn-prev,
+    .btn-next {
+
+        width: 35px;
+        height: 35px;
+
+    }
+
+
+    .btn-prev {
+        left: 5px;
+    }
+
+
+    .btn-next {
+        right: 5px;
+    }
+
+    .slide {
+        height: 600px;
+        min-width: 300px;
+    }
+
+    .slide img,
+    .slide video {
+        object-fit: cover;
+        object-position: center;
+    }
+
 
     /* ================= FOOTER ================= */
 
