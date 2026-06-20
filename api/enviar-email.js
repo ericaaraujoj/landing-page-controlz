@@ -6,8 +6,13 @@ export default async function handler(req, res) {
         });
     }
 
-
     const { nome, telefone, mensagem } = req.body;
+
+    console.log({
+    service: process.env.EMAILJS_SERVICE_ID,
+    template: process.env.EMAILJS_TEMPLATE_ID,
+    public: process.env.EMAILJS_PUBLIC_KEY
+});
 
     try {
 
