@@ -1,6 +1,12 @@
 const formulario = document.getElementById("form-contato");
 const telefone = document.getElementById("telefone");
 
+telefone.addEventListener("input", () => {
+
+    telefone.value = telefone.value.replace(/\D/g, "");
+
+});
+
 formulario.addEventListener("submit", async function (event) {
 
     event.preventDefault();
