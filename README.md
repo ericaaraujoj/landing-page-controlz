@@ -9,9 +9,11 @@ O projeto foi pensado para destacar informações importantes como serviços ofe
 - HTML5  
 - CSS3  
 
+## 🔗 Link de acesso
+https://controlz-studio.vercel.app/
+
 ## 📸 Screenshot
 
-<!-- Coloque aqui a imagem do projeto -->
 - Desktop
   
 ![Preview do projeto](/img/foto1.png)
