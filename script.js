@@ -1,27 +1,58 @@
-//formulario contato
-emailjs.init("SUA_PUBLIC_KEY");
-
 const formulario = document.getElementById("form-contato");
+const telefone = document.getElementById("telefone");
 
-formulario.addEventListener("submit", function (event) {
+formulario.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
-    emailjs.sendForm(
-        "SEU_SERVICE_ID",
-        "SEU_TEMPLATE_ID",
-        this
-    )
-        .then(() => {
+    telefone.value = telefone.value.replace(/\D/g, "");
 
-            alert("Mensagem enviada com sucesso!");
-            formulario.reset();
+    const dados = {
 
-        })
-        .catch((erro) => {
-            alert("Erro ao enviar mensagem");
-            console.log(erro);
+        nome: document.getElementById("nome").value,
+        telefone: document.getElementById("telefone").value,
+        mensagem: document.getElementById("mensagem").value
+
+    };
+
+    let resposta;
+
+    try {
+
+        resposta = await fetch("/api/enviar-email", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(dados)
+
         });
+
+    } catch (error) {
+
+        alert("Erro ao enviar mensagem");
+
+        console.log(error);
+
+        return;
+    }
+
+
+    if (resposta.ok) {
+
+        alert("Mensagem enviada com sucesso!");
+
+        formulario.reset();
+
+    } else {
+
+        alert("Erro ao enviar mensagem");
+
+    }
+
 });
 
 //slider
@@ -53,13 +84,10 @@ next.addEventListener("click", () => {
 prev.addEventListener("click", () => {
 
     if (track.scrollLeft <= 0) {
-
         track.scrollLeft = track.scrollWidth - track.clientWidth;
     } else {
-
         track.scrollLeft -= tamanhoSlide();
     }
-
     iniciarAutoSlide();
 });
 

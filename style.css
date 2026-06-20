@@ -162,7 +162,6 @@ header {
 
 .cta:hover {
     transform: scale(1.05);
-
 }
 
 .servicos {
@@ -174,7 +173,6 @@ header {
     margin-bottom: 50px;
     font-weight: 700;
     font-size: 30px;
-
 }
 
 .servicos h2::after {
