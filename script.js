@@ -7,6 +7,14 @@ formulario.addEventListener("submit", async function (event) {
 
     telefone.value = telefone.value.replace(/\D/g, "");
 
+    if (telefone.value.length !== 11) {
+
+        alert("Digite um telefone válido com DDD");
+
+        return;
+
+    }
+
     const dados = {
 
         nome: document.getElementById("nome").value,
