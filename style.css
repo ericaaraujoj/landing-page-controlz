@@ -547,6 +547,11 @@ footer {
 
 @media (max-width: 768px) {
 
+    html {
+        scroll-behavior: smooth;
+        touch-action: manipulation;
+    }
+
     /* ================= HEADER ================= */
     header {
         padding: 15px 20px;
