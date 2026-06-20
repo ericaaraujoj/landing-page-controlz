@@ -8,18 +8,12 @@ export default async function handler(req, res) {
 
     const { nome, telefone, mensagem } = req.body;
 
-    console.log({
-    service: process.env.EMAILJS_SERVICE_ID,
-    template: process.env.EMAILJS_TEMPLATE_ID,
-    public: process.env.EMAILJS_PUBLIC_KEY
-});
-
     try {
-
         const resposta = await fetch(
             "https://api.emailjs.com/api/v1.0/email/send",
             {
                 method: "POST",
+
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -40,14 +34,22 @@ export default async function handler(req, res) {
         );
 
         if (!resposta.ok) {
-            throw new Error("Erro EmailJS");
+
+            const erro = await resposta.text();
+
+            console.log("ERRO EMAILJS:", erro);
+
+            throw new Error(erro);
+
         }
 
         return res.status(200).json({
             sucesso: true
         });
 
-    } catch(error){
+    } catch(error) {
+
+        console.log("ERRO GERAL:", error.message);
 
         return res.status(500).json({
             erro: error.message
