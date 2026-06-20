@@ -628,7 +628,7 @@ footer {
         word-break: break-word;
         /* quebra quando estoura */
 
-        font-size: 36px;
+        font-size: 34px;
         padding-left: 20px;
         padding-right: 20px;
         /* evita corte lateral */
@@ -727,8 +727,8 @@ footer {
 
     /* ================= WHATS ================= */
     .whatsapp-fixo img {
-        width: 65px;
-        height: 65px;
+        width: 95px;
+        height: 95px;
     }
 
     /* ================= PORTFOLIO ================= */
